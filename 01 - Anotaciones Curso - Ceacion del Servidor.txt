@@ -1,0 +1,49 @@
+Lo primero que hago es iniciar un package.json en la carpeta del proyecto con el siguiente comando en la terminal
+
+npm init --yes //PRIMERO DEBERIA POSICIONARME EN LA CARPETA DEL PROYECTO
+
+despues instalo express express-handlebars y express-session. El handlebars es un motor de plantillas, y el session sirve para mantener una sesion abierta mediante express, tambien instalo el conector mysql, el complemento que guarda la session en mysql, morgan que me sirve para meter logs, bcryptjs que sirve para encriptar las contraseñas passport y passport local que me sirven para la autenticacion y la autenticacion con la bd local, el timeago.js me sirve para mostrar las fechas en tiempo pasado onda 5 minutos atras o hace 5 minutos, connect-flash me permite mostrarle mensajes de exito o fallo al usuario del lado del cliente y express-validator es el modulo de express que ayuda a la validacion de usuarios
+
+npm install express express-handlebars express-session mysql express-mysql-session morgan bcryptsjs passport passport-local timeago.js connect-flash express-validator 
+
+Despues de esto puedo instalar nodemon, pero lo instalo con el comand -D para indicar que es importante solo en la fase de desarrollo, no en produccion, asi en el package.json me lo mete en dev-dependencies y no en dependencies.
+
+npm i nodemon -D
+
+Creo la carpetas src, dentro de src creo las carpetas lib, views, public, routes, ademas creo tmb los archivos database.js, index.js, keys.js
+Despues de esto agarro y armo la estructura de mi proyecto en index.js separandolo en Global variables, Settings, Incializaciones, etc e instancio a morgan, express en app defino el puerto y creo la funcion listen.
+
+ejecuto con npm run dev //Siendo dev una funcion creada en el pakage.json en la parte de scripts
+
+Ahora lo que hago es empezar a crear mi ruta app.get(''/',()=>{}) creando dentro de la carpeta routes otro archivo index.js.
+
+Despues de esto comienzo a configurar mi motor de plantillas express-handlebars en el index.js dentro de src, defino las rutas de la carpeta view, creo las carpetas partials y layouts dentro de view y tambien establezco sus rutas, creo un archvio main.hbs dentro de view y lo establezco como mi plantilla principal, ademas establezco la extension por default como '.hbs'. La ruta de views la seteo con app.set, las de las otras carpetas dentro de view las establezco dentro de app.engine('.hbs',), antes de esto tengo que importar los modulos express-handlebars y path, tmb creo dentro de la carpeta lib el archivo handlebars.js que va a contener algunas funciones, y establezco su ruta dentro de app.engine en el atributo helpers. Ahora establezco el app.set('view engine','.hbs') y despues empiezo a establecer middlewares tales como
+
+app.use(express.urlecoded({extended:false})) para solo aceptar strings sencillos, nada de imagenes y eso
+otro que tambien esta copado es el app.use(express.json()) que me permite reciir datos json, y ademas creo un middleware que por ahora esta vacio asi:
+
+app.use( (req,res,next=>{ next(); } ) );
+
+Creo la nueva ruta authentication.js dentro de la carpeta routes, tambien creo links, ME TENGO QUE ACORDAR QUE PARA IMPORTAR COSAS EN LOS ARCHIVOS A IMPORTAR TENGO QUE USAR EL router = express.Router(); module.exports = router;
+importo las rutas de los archivos nuevos dentro de routes mediante el app.use(require('./routes/authentication')); y app.use('/links',require('.routes/links')) La segunda importacion significa "Si queres hacer algo con links, ya sea, metodo post,get,put,delete, entonces antes de hacerlo debes meter en la url el string /links/"	 
+
+En la carpeta Public voy a meter todo el cs js, la mayoria del frontEnd, lo establezco esto mediante el siguiente comando
+
+app.use(express.static(path.join(__dirname,'public'))); dento de los archivos publicos en src/index.js
+
+ACA TERMINA LO DE LA CREACION DEL SERVIDOR
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

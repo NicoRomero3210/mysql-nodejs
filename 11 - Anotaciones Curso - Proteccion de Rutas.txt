@@ -1,0 +1,32 @@
+Bueno aca lo que hago primero es crear la vista proile.hbs, y habilito el router.get('/profile')
+Despues empiezo a armar la vista y pongo en las variables globales del documento index.js el user almacenado en la session para que asi, cualquier vista accceda a el.
+
+Despue slo que hice fue agregar el if en navigation.hbs para poder decirle que cosas se pueden ver solo si se inicia sesion, puse los botones que redirigen al perfil y te permiten cerrar la sesion, otra cosa que hice fue definir la ruta /logout que cierrra la sesion y te manda a /signin.
+
+Despues de esto creamos el archivo auth.js en lib, se podria poner lo que pongo ahi en helpers, pero queda mas lindo asi, ahi creo un objeto que hay que exportar, dentro del objeto voy a crear el emtodo isLoggedIn para saber si hay algun usuario autenticado, esto tengo que exportar en los documentos de rutas que contengan rutas a las que no deberia poder acceder si es que no estoy logueado, ahi deje anotaciones para que me guie(los documentos en este caso son authentication.js y links.js en la carpeta routes)
+
+Tambien creo el metodo isNotLoggedIn para poder hacer el proceso inverso, es decir, si estoy logueado a que rutas no puedo acceder, onda si ya estoy logueado no puedo ir a signin por ejemplo, esto lo agrego a todas las rutas a las que no deberia ir si estoy logueado, a los post tambien deberia ponerle las funciones que restringen el acceso, pero por japa no lo hice, tambien deberia ver en el archivo links a cuales deberia ponerle pero por japa tmb no lo hice.
+
+Aca ya estaria terminada la app, es decir, el esqueleto basico, si quisera la puedo modificar para agregarle o quitarle cosas, pero ya anda correctamente, sigue la parte de retocar el main y no se que mas
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

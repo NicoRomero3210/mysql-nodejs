@@ -1,0 +1,22 @@
+Primero lo que hago es ir al index.js de la aplicacion e importar connect-flash y meterlo en la app como middleware, onda, app.use(flash); flash es la constante en donde almacene connect-flash, como es un middleware importado en el index principal, entonces ya puedo acceder a el desde cualquier archivo, por lo qe me dirijo a la ruta links.js y empiezo a usarlo usando el metodo req.flash('succes','enlace guardado satisfactoriamente') para poder mandar un mensaje de exito, el primer parametro es el nombre del mensaje, el segundo es el mensjae que se mostrara,
+
+Despues lo que hago es agarrar ir al index.js, instanciar un app.local.succes y le asigno como valor el req.flash('exito'), sin el segundo parametro, esto lo hago en la zona de variables globales, asi ya queda habilitado ese mensaje para mostrarse en todas las vistas.
+
+Despues lo que hago es requerir en index.js el express-session que es necesario apra que funque el connect-flash, tambien configuro la vista main.hbs para que me muestre el alert, lo pongo entre unas llaves if succes y ahi muestro como hago toda la matufia con las etiquetas de bootstrap para mostrar ese mensaje
+
+Tengo que importar tambien el express-mysql-session y el objeto database de el documento keys.js para poder laburar con el tema de la session y los mensajes flash ahi en el index.js, deje comentado esas cosas aunque lo que hago es requrir esos modulos el express-session  y el express-mysql-session los instancio en las constantes y traigo la database del documento keys.js, y eso que traje de keys.js le paso como argumento a la instancia del express-mysql-session cuando armo la session en los middleware
+
+Una vez que termino con eso que es solo para el add copio nomas en link.js el mensaje del primero en el delete y el update y ya fue, queda el mensaje pa todo el crud 
+
+
+Aca Empiezo con el tema de la navegacion
+
+Lo primero que se hace respecto a eso es centrar el navbar metiendolo en un contaienr, despues le cambio el nombre del primer elemento del navbar a favoriots, despues agarro y busco en getboostrap.com el elemnto dropdown para poder hacer lo de agregar links y mostrar todos los links. Ademas enlazo estos tres elementos a sus respectivas rutas. Otra cosa que hago es agarrar lo de los mensaje en el main y lo muevo a un nuevo archivo en partials llamado message.hbs, esot lo hago para que no se abulte todo el codigo en el main, y, como en el partial van las cosas que se comparten en las distintas vistas o vistas parciales, entonces eso pongo ahi
+
+
+
+
+
+
+
+

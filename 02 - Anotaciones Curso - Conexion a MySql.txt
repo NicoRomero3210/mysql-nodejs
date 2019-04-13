@@ -1,0 +1,20 @@
+Aca lo primero que hice fue crear la carpeta databases dentro de la carpeta general del proyecto, ahi cree un archivo db.sql donde meti todos los scripts para la creacion de la db y de las tablas users y links. Si quiero ver que onda los scripts puedo mirar ahi, estan todos.
+
+Despues de esto empiezo a crear el archivo de conexion a la bd, el archivo se llama database.js, esta dentro de src.
+
+Antes de modificar el archivo database, modifico el archivo keys.js, al cual le hago crear el objeto database, donde pongo todas las caracterisiticas de la conexion, el host, la password y todo eso
+
+Despues si, arranco armando todo el descajete de la conexion, los errores, importo el archivo keys, el modulo mysql, creo el pool que es la conexion real y despues de decirle lo de los errores y la conexion, exporto el pool. Par apoder hacer consultas mediante Pormises tengo que exportar el modulo util, pero solo el promisify de esta forma
+
+const {promisify} = require('util');
+
+pool.query = promisify(pool.query);
+
+despues exporto el database.js al documento links que esta en la carpeta routes.
+
+para exportar algo que esta en otro nivel tengo que poner const pool_db = require('../database.js');
+
+
+
+
+

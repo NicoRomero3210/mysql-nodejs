@@ -1,0 +1,51 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+
+  <a class="navbar-brand" href="/">Favoritos</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ml-auto">
+
+      {{#if user}} <!-- Esto me dice que si el usuario esta loguado me muestre todo esto-->
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Links
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/links">All Links</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="/links/add">Add Link</a>
+        </div>
+      </li>
+
+      <li class="nav-item">
+
+        <a href="/profile" class="nav-link">Perfil</a>
+
+      </li>
+
+      <li>
+
+        <a href="/logout" class="nav-link">Cerrar Sesion</a> <!-- Aca le digo que me cierre la sesion, va a tomar la ruta /logout que en el documento authentication defino lo que va a hacer -->
+
+      </li>
+
+      {{else}}
+
+       <li class="nav-item">
+        <a href="/signin" class="nav-link">SignIn</a>
+       </li> 
+       <li>
+        <a href="/signup" class="nav-link">SignUp</a>
+       </li>
+
+      {{/if}}
+
+    </ul>
+  </div>
+
+  </div>
+</nav>

@@ -1,0 +1,26 @@
+Lo primero fue crear en views la carpeta auth y dentro de esta bosta la vista auth.hbs y hago el formulario loco ese, mientras en el archivo authentication.js en routes hago la logica del get y del post, tambien de paso comienzo a usar el modulo passport.
+
+Para usar la mierda del passport empiezo creando el passport.js en lib, importo ahi el modulo passport y passport-local, uso el strategy, despues creo el middleware local.signup y le paso un objeto a LocalEstrategy donde aclaro los campos a auenticar y habilito el paso del request body tambien para poder recibir otros parametros opcionales de autenticacion, a esta mierda ademas de ese bojeto tmb le paso una funcion que por ahora no se que mierda hace.
+
+De ahi paso a index.js, en donde vuelvo a importar el passport, lo inicializo en la zona inicializate importandolo del lib/passport.js y creo su middleware tal como esta ahi nomas en la zona de middlewares.
+
+Ahora voy a auhentication.js, importo el modulo passport de express y en el post empiezo a definir todo, onda, las cosas que vana  pasar si falla la autenticacion, si es exitosa la autenticacion y eso, el metodo passport va a funcionar tal y como lo defini en el passport.js en la carpeta lib, por eso le paso el nombre que defini para ese middleware. Defino la nueva ruta profile, la cual es a la que voy a ir si la autenticacion es exitosa.
+
+
+Despues de esto estaria recibiendo un objeto que se muestra por consola cada vez que hago el signup, pero la onda es guardar ese objeto, para eso defino finalmente el local.signup que se ejecuta cuando hago el singup, ahi saco el console.log y defino un objeto newUser con todos los parametros que le paso, el unico parametro que no le paso es el fullname, pero eso esta en el req.body, por lo que lo rescato de ahi en una constante, una vez definido eso realizo la consulta de insercion en la base de datos, por esto debo importar el archivo database con 
+pool = require('../database');
+
+Con esto ya funciona, pero el password se lo estoy apsando en texto plano, por esto debo encriptarlo, para hacer esto creo el archivo helpers.js y ahi importo el modulo bcrypts con
+const bcrypts = require('bcrypts');
+despues creo el objeto const helpers = {}; y empiezo a definir sus metodos encryptPassword que sirve para generar el hash, y despues el matchPassword que sirve para validar el password, estos metodos los uso en el passport.js, para hashsear el password del newUSer, de paso completo el metodo devolviendo el callback done en donde devuelvo el newUser con el id autogenerado de la bd, ese id autogenerado obviamente newUser no lo posee, pero si el oobjeto result que devuelve la bd al insertar el nuevo usuario, por lo que le puedo pasar ese id al newUser, despues tambien completo los metodos serilize y deserialize, que realmente no se pa que bosta sirven, pero el serialize me almacena ese usuario en la sesion y el desirialize me rescata el ususario en sesion de la bd
+
+ 
+
+
+
+
+
+
+
+
+

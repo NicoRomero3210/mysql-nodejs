@@ -1,0 +1,18 @@
+
+
+Aca lo que hago es casi lo mismo que en el paso anaterior, primero lo uqe hago es crear el passport.use('local.signin', newLocalStrategy({})), dentro de eso se arma el objeto del usuario que quiero recuperar en la bd, define la consulta, se valida la contraseña, tambien creo la vista del formulario del signIn, se diferencia del SignUp en la ruta a la ques e envia el form que seria '/signin', tambien se elimina la fila de fullname y se deja solo la de username y passwordd, se agrega una imagen abajo de la etqueta de SignIn y eso basicamente seria todo en esa vista, tambien creo el paso de mensaje flash en el index en las variables globales el cual responderia a mensajes 'message', agrego tambien eso en el views/partials/message, que basicamente seria copiar el de success pegarlo y cambiar el succes por message, tmb se le cambia el tipo de mensagge succes al de alert, despues en authentication.js hago el post y el get de signin, e get es lo mismo, renderizo la vista signin, en el otro tmb es casi lo mismo, cambio el succesRedirect a 'signIn' y uso el metodo dificil para declarar el authenticate, cosa de mostrar que anda igual, no se porque no me toma el next si al del video le agarra sin problemas(NO ME LO AGARRABA PORQUE TYO COMO GIL NO LE DECLARABA EN LOS PARAMETROS DE ARRIBA)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

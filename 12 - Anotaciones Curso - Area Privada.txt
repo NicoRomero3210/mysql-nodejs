@@ -1,0 +1,35 @@
+creo el index.hbs que es la pagina inicial, la renderizo en el router.get('/',()=>{}) en index.js
+
+Agrego en partial/navigation.hbs y pongo los elementos del navbar que quiero que se muestren cuando no hay usuario logueado con un else 3:32:50, Cambio el favorite links(Favoritos en el mio) por al ruta inicial '/'
+
+En index.hbs agrego una imagen que es la que se va a mostrar en la ruta inicial 3:34:17, aca al fin uso el style.css la matufia comienza en el minuto 3:36:19 aca le pone el estilo al vody, al masthead y agrega la imagen al contenedor, alineandolo con todos los demas contenedores
+
+con @media lo hacemos responisve, segun el cra.
+
+ADEMAS DE LA HIPPONADA DE LOS ESTILOS ACA HACE LA APRTE DE MOSTRAR SOLO LOS DATOS PERTENECIENTES AL USUARIO LOGUEADO.
+
+A partir del minuto 3:41:35 empieza la matufia de eso, para hacer esto usamos el id del usuario en sesion, poniendo en el select de la consulta un where que iguale el user_id con el id del usuario en sesion, y en el enlace para guardar un elemento con un usuario determinado en sesion le agregamos al objeto newLink e user_id que va a ser el id del usuario en sesion que esta guardando ese elemento
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

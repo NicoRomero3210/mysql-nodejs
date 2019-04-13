@@ -1,0 +1,23 @@
+Lo primero es crear una capeta links dentro de viewsen donde voy a almacenar todo lo que tenga que ver con los links, almacenamiento, recuperacion, etc.
+
+tambien coloco dentro del routes/links.js el router.get('/add', (req,res)=>{})
+
+despues creo el archivo add.hbs dentro de la nueva carpeta links y le pongo lo del res.render('links/add'); dentro del router.get()
+
+Ahora epiezo a toquetear el main.hbs dentro de layouts, le agrego las fuentes awesome y oswald, tmb le habilito el bootstrap4.
+Creo la carpeta CSS en public y dentro de esa carpeta creo el archivo styles.css, despues empiezo a crear el formulario en add.hbs, ahi hago lo de las cards creo el primer input, etc, creo el formulario con los campos title,url, description y el boton save, aca llega al punto de que envia informacion, aunque todavia no la almacena en la bd.
+
+Despues de esto creo en la ccarpeta partial el archivo navigation.hbs en el cual importo una barra de navegacion desde getboostrap.com apretando en documentation navbar busco la seccion nav. Despues de crear ese archivo lo importo al main arriba del body como deje dicho ahi, esta comentada esa parte.
+
+Lo ultimo que hice fue centrar el formulario agregando a la etiqueta superior la clase mx-auto, el cual centra tooodo el formulario, asi termina esta seccion
+
+
+
+
+
+
+
+
+
+
+

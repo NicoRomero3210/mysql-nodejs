@@ -1,0 +1,4 @@
+Lo primero que te hace saber es que lo que envias por el formulario se almacena en request o req, esto llega en formato JSON, lo que hacmeos despues es agarrar el contenido del request con la accion req.body y almacenamos en un objeto deconstruido todas sus propiedades, despues eso lo almacenamos en un objeto nuevo llamado newLink, por el momento muestro sus contenidos por consola
+
+Hora si inserto en la bd mediante el await pool_db.query(), ahi explico lo uqe hace, poque uso esto y porque pongo async
+Despues de esto ya estoy en condiciones de almacenar cosas

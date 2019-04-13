@@ -1,0 +1,23 @@
+Como siemrpe creo el query, aca la diferencia es que el resultado de la query le tengo que pasar solo el objeto que tiene, ya que me va a devolver uno solo.
+
+Tabmien creo la vista edit.hbs en views, para crearla copio todo el contenido de add.hbs, y mediante el res.render le paso el contenido de links.
+
+En el form general hago que esto apunte a  /links/edit/{{enlace.id}}, donde enlace.id es el objeto que le pase previamente para que visualice en el render, tmb le cambio el metodo a POST, asi sabe que la url tiene que matchear con el metodo router.post() del documento links.js, los contenidos que ya posee el elemnto enlace que le pase se visualiza como se muestra en el documento, con la notacion de doble llave y la notacion punto para direccionar el atributo que deseo mostrar, ej: {{enlace.url}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

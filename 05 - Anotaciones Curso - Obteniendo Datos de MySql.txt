@@ -1,0 +1,18 @@
+Aca lo que hice fue crear el metodo router.get('/',async (req,res)=>{}), y adentro y alamceno en la variable links la respuesta de la query, tambien cree el archivo list.hbs en la carpeta views/links, y en este archivo lo que hago es recibir el objeto links que le paso mediante el res.render('links/list',{links}), la sintaxis para el recorrido ese esta escrita ahi, lo dejo marcado en un comentario.
+
+Una vez Hecho eso empiezo la matufia, Sabemos que entre llaves van las propiedades que quiero mostrar, tambien tengo que usar los div esos de las cards y toda la verdura esa, y asi me muestra mi enlace cargado con los botoncitos y toda la cosa, para mostrar la fecha uso el modulo tmieago.js, en el documento lib/handlebars uso eso, despues hago las importaciones al documento handlebars para poder manejar las fechas y establezco el formato en que se van a mostrar las fechas, ademas agarro y pongo el dato de la fecha en el archivo list.hbs, ahi en el doc list.hbs muestro en comentario como usar ese helper.timeago();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

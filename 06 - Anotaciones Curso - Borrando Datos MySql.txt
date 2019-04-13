@@ -1,0 +1,8 @@
+Lo primero que hago es crear la consulta router.get('/links/delete/:id',(req,res)=>{})
+
+despues pongo en la vista list.hbs la ruta href="/links/delete/{{id}}" en la etiqueta a que le corresponde al boton delete.
+
+dentro de la consulta router.get('links/delete/:id') creo una constante que toma el id del req.params, despues creo la consulta y le paso el id en un arreglo.
+Redirecciono hacia la misma pagina para poder refrescar los datos
+
+Para poder crear una tarjeta que me pida crear enlaces si es que esta vacio uso la notacion de llaves {{else}}, eso lo pongo antes de cerrar el {/each}, cosa de decir, esto va a ocurrir si es que lo que le pase al each esta vacio, Eso esta comentado en el codigo

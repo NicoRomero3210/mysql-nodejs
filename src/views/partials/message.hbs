@@ -1,0 +1,52 @@
+<!-- Aca traigo lo de los mensajes creados con connect-flash, ya que si quisiera agregar mas se abultaria todo en el main, y como aca estan las vistas parciales que se comparten entre las distintas vistas, traigo entonces esa pijada aca -->
+
+
+{{#if success}} <!-- con esto le digo que si hubo exito me muestre este mensaje  -->
+				   <!-- aca lo unico raro son las etiquetas alerts que son todo de bs4 y el &time que es un simbolo de cruz para el mensaje, nada mas -->
+		<div class="container p-4">
+			<div class="row">
+				<div class="col-md-4 mx-auto">
+					<div class="alert alert-success alert-dismissible fade show" role="alert">
+						{{success}} <!-- Aca muestro el mesnjade de exito -->
+						<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+							<span aria-hidden="true">&times;</span> <!-- Aca esta el simbolo que digo en el comentario de arriba -->
+
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+{{/if}}
+
+
+{{#if message}} <!-- con esto le digo que si hubo exito me muestre este mensaje  -->
+				   <!-- aca lo unico raro son las etiquetas alerts que son todo de bs4 y el &time que es un simbolo de cruz para el mensaje, nada mas -->
+		<div class="container p-4">
+			<div class="row">
+				<div class="col-md-4 mx-auto">
+					<div class="alert alert-danger alert-dismissible fade show" role="alert">
+						{{message}} <!-- Aca muestro el mesnjade de exito -->
+						<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+							<span aria-hidden="true">&times;</span> <!-- Aca esta el simbolo que digo en el comentario de arriba -->
+
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+{{/if}}
+
+
+
+
+
+
+
+
+
+
+
+
+
